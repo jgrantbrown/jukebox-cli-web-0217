@@ -33,14 +33,16 @@ def list(songs)
 end
 
 def play(songs)
-puts "Please enter a song name or number?"
+  puts "Please enter a song name or number?"
     playsong=gets.chomp
-     if songs.include?(playsong)
-       puts "Playing #{playsong}"
-     elsif playsong.to_i < songs.size
-       puts "Playing #{songs[playsong.to_i+1]}"
-     else #playsong.to_i >songs.size
-       puts "Invalid input,please try again"
+      #if playsong.to_i<=songs.size
+        #puts "Playing #{songs[playsong.to_i-1]}"
+      if songs.include?(playsong)
+        puts "Playing #{playsong}"
+      elsif playsong.to_i<=songs.size && playsong.to_i>0
+        puts "Playing #{songs[playsong.to_i-1]}"
+      else #songs.!include?(playsong)
+        puts "Invalid input, please try again"
     end
 end
 
